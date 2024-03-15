@@ -1,0 +1,20 @@
+import cv2
+image = cv2.imread('/content/haha.jpg')
+
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+cv2.imwrite('haha.jpg', gray_image)
+
+height, width = gray_image.shape
+
+
+min_pixel = gray_image.min()
+max_pixel = gray_image.max()
+
+normalized_image = gray_image / 255.0
+
+# menampilkan ouput
+print('Width:', width)
+print('Height:', height)
+print('Minimum pixel value:', min_pixel)
+print('Maximum pixel value:', max_pixel)
