@@ -1,0 +1,26 @@
+import cv2
+import matplotlib.pyplot as plt
+
+# Baca gambar
+image = cv2.imread('/content/haha.jpg')
+
+# Ubah ke citra ke skala abu-abu
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# Transformasi geometri: Flip horizontal
+flip_horizontal = cv2.flip(gray_image, 1)
+
+# Transformasi geometri: Flip vertikal
+flip_vertical = cv2.flip(gray_image, 0)
+
+# Menampilkan gambar hasil flip horizontal
+plt.imshow(flip_horizontal, cmap='gray')
+plt.title('Flip Horizontal')
+plt.axis('off')  # Menyembunyikan sumbu
+plt.show()
+
+# Menampilkan gambar hasil flip vertikal
+plt.imshow(flip_vertical, cmap='gray')
+plt.title('Flip Vertical')
+plt.axis('off')  # Menyembunyikan sumbu
+plt.show()
